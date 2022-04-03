@@ -7,4 +7,10 @@ import { Email } from 'src/email/mail';
 })
 export class AppComponent {
   title = 'email-barbieri';
+  vettMail:Email[]=[]
+  invia(a:HTMLInputElement,oggetto:HTMLInputElement,messaggio:HTMLInputElement):boolean{
+    let e = new Email(a.value, oggetto.value,messaggio.value);
+    this.vettMail.push(e)
+    return false;
+  }
 }
