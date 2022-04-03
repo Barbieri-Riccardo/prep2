@@ -4,4 +4,12 @@
 </label>
 <input type = "text" #messaggio><label>messaggio
 </label>
-<button (click)="invia(a,oggettto,destinatario)">INVIA</button>
+<button (click)="invia(a,oggetto,messaggio)">INVIA</button>
+
+
+<ul>
+  <li *ngFor = "let e of vettMail">
+    {{e | json}}
+    <app-sent-mail [email] = "e" ></app-sent-mail>
+  </li>
+</ul>
